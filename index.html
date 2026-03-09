@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Generátor herních výzev</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Generátor herních výzev</h1>
+      <p class="subtitle">Singleplayer • Střední obtížnost</p>
+    </header>
+
+    <section class="cards" aria-label="Výběr hry">
+      <div class="game-card" data-game="chess" tabindex="0" role="button" aria-pressed="false">
+        <h2>Šachy</h2>
+      </div>
+      <div class="game-card" data-game="snake" tabindex="0" role="button" aria-pressed="false">
+        <h2>Snake</h2>
+      </div>
+      <div class="game-card" data-game="tetris" tabindex="0" role="button" aria-pressed="false">
+        <h2>Tetris</h2>
+      </div>
+    </section>
+
+    <div id="result" class="result" aria-live="polite">Klikni na hru a vygeneruj výzvu nebo hraj.</div>
+
+    <canvas id="game-canvas" style="display:none; margin: 20px auto; border: 1px solid #fff;"></canvas>
+
+    <footer class="footer">Bez frameworků — čisté HTML/CSS/JS • Snadné rozšíření 🔧</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

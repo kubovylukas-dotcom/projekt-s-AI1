@@ -1,0 +1,42 @@
+:root{
+  --bg-1:#04050b; --bg-2:#071029; --card:#0f1725; --accent:#7b61ff; --accent-2:#00d4ff; --muted:#9fb3c8;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: linear-gradient(160deg,var(--bg-1),var(--bg-2));
+  color:#e8f6ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+}
+.container{width:100%;max-width:920px}
+.header{text-align:center;margin-bottom:18px}
+.header h1{font-size:1.8rem;margin:0}
+.subtitle{color:var(--muted);margin-top:6px;font-size:0.95rem}
+
+.cards{display:flex;gap:18px;justify-content:center;align-items:stretch;flex-wrap:wrap;margin-bottom:18px}
+.game-card{flex:1 1 220px;min-width:180px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px;padding:28px 18px;text-align:center;border:1px solid rgba(255,255,255,0.04);cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+.game-card h2{margin:0;font-size:1.25rem;color:#fff}
+.game-card:hover, .game-card:focus{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.6);border-color:rgba(123,97,255,0.8);outline:none}
+
+.result{min-height:64px;padding:16px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border:1px solid rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;font-weight:700;color:#dff7ff}
+.footer{margin-top:12px;text-align:center;color:var(--muted);font-size:0.9rem}
+
+@media (max-width:700px){
+  .cards{flex-direction:column;gap:12px}
+}
+
+Vytvoř webové šachy v čistém HTML/CSS/JS (bez externích knihoven). Požadavky:
+- 8×8 šachovnice, responzivní, figurky vykreslené SVG/CSS nebo obrázky.
+- Plná validace tahů pro všechny figurky včetně rošády, en passant, proměny pěšce.
+- Detekce šachu, šach-matu, patu; možnost undo a reset.
+- Ovládání: kliknutí (vybrat figurku -> cílové políčko) + podporu tahů přetažením.
+- Podpora FEN import/export a PGN export jednoduché partie.
+- Jednoduchý AI protivník (minimálně minimax s ořezáním nebo hloubka 2–3) a režim hotseat (2 hráči).
+- UI: zobrazení tahu, historie tahů, časovač na tah (volitelně), nastavení obtížnosti.
+- Jasné oddělení engine (logika tahu) a UI, dobře komentovaný kód.
+- Uložit partii do localStorage.
